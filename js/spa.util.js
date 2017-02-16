@@ -15,7 +15,8 @@ spa.util = (function(){
 			error,
 			input_map = arg_map.input_map,
 			settable_map = arg_map.settable_map,
-			config_map = arg_map.config_map;
+			config_map = arg_map.configMap;
+
 
 		for ( key_name in input_map ) {
 			if ( input_map.hasOwnProperty( key_name ) ){

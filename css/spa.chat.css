@@ -10,7 +10,7 @@
 	border-width  : thin 0 0 thin;
 	border-color  : #888;
 	box-shadow    : 0 0 0.75em 0 #888;
-	z-index:      : 1;
+	z-index       : 1;
 }
 
 .spa-chat-head, .spa-chat-closer {
@@ -36,7 +36,7 @@
 	right : 0;
 	width : 2em;
 }
-	.spa-chat-closer {
+	.spa-chat-closer:hover {
 		background : #800;
 	}
 .spa-chat-head-toggle {
