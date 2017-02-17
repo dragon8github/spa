@@ -1,10 +1,14 @@
 require("css/spa.css");
-
-spa = (function(){
+let spa_shell = require('./spa.shell.js'); 
+let spa = (function(){
 	var initModule = function ( $container ) {
-		spa.shell.initModule( $container );
+		spa_shell.initModule( $container );
 	};	
 	return {
-		initModule : initModule
+		initModule : initModule 
 	};
 }());
+
+
+spa.initModule( $('#spa') );
+

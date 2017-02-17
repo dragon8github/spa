@@ -1,3 +1,5 @@
-spa.model = (function () {
+let spa_model = (function () {
 	return {};
 })();
+
+module.exports = spa_model;

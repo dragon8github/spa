@@ -1,4 +1,4 @@
-spa.util = (function(){
+let spa_util = (function(){
 	var makeError,setConfigMap;
 
 	makeError = function ( name_text, msg_text, data ) {
@@ -37,3 +37,4 @@ spa.util = (function(){
 
 })();
 
+module.exports = spa_util;

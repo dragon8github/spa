@@ -1,6 +1,7 @@
 require("css/spa.shell.css");
-
-spa.shell = (function () {
+var spa_chat = require('./spa.chat.js'); 
+var spa_model = require('./spa.model.js');
+var spa_shell = (function () {
 	//---------------BEGIN MODULE SCOPE VARIABLES-------------------
 	var 	    
 	    onClickChat      = function () {},
@@ -9,7 +10,8 @@ spa.shell = (function () {
 		changeAnchorPart = function () {},	    
 		setJqeryMap      = function () {},
 		setChatAnchor    = function () {},
-	    initModule       = function () {},  
+	    initModule       = function () {}, 
+	    toggleChat       = function () {}, 
 	    jqueryMap = { $container : null },	      
 	    stateMap  = { 
 	    	$container        : null,
@@ -49,7 +51,7 @@ spa.shell = (function () {
         // 使用jquery的extend()方法来复制对象。
     	// 所有的js对象都是按引用传递的，正确的复制一个对象不是件容易的事
     	return $.extend( true, {}, stateMap.anchor_map );
-    }    
+    };    
 
 	changeAnchorPart = function (arg_map) { // 更新锚点
 		var 
@@ -95,7 +97,7 @@ spa.shell = (function () {
         }
 
         return bool_return;
-	}
+	};
     //--------------END UTILITY METHODS-----------------------
 
 
@@ -112,13 +114,13 @@ spa.shell = (function () {
 
 
     //-------------BEGIN EVENT HANDLERS--------------
-    onClickchat = function ( event ) { // 右下角滑块的click事件
+    onClickChat = function ( event ) { // 右下角滑块的click事件
     	// 更新URI锚点
     	changeAnchorPart({
     		chat : stateMap.is_chat_retracted ? 'open' : 'closed'
     	})
     	return false;
-    }
+    };
     
     onHashchange = function ( event ) { // 锚点change事件，通过这个事件来操控一系列的变化
        var 
@@ -146,13 +148,13 @@ spa.shell = (function () {
        	  s_chat_proposed = anchor_map_proposed.chat;
        	  switch ( s_chat_proposed ) {
        	  	case 'opened' : 
-       	  	  is_ok = spa.chat.setSliderPosition( 'opened' );
+       	  	  is_ok = spa_chat.setSliderPosition( 'opened' );
        	  	  break;
        	  	case 'closed' :       	  	  
-       	  	  is_ok = spa.chat.setSliderPosition( 'closed' );
+       	  	  is_ok = spa_chat.setSliderPosition( 'closed' );
        	  	  break;
        	  	default : 
-       	  	  spa.chat.setSliderPosition( 'closed' );
+       	  	  spa_chat.setSliderPosition( 'closed' );
        	  	  delete anchor_map_proposed.chat;
        	  	  $.uriAnchor.setAnchor( anchor_map_proposed, null, true );
        	  }
@@ -233,13 +235,13 @@ spa.shell = (function () {
 	    $container.html( configMap.template_html );
 	    setJqeryMap();
 
-	    spa.chat.configModule({
+	    spa_chat.configModule({
 	    	set_chat_anchor : setChatAnchor,
-	    	chat_model      : spa.model.chat,
-	    	people_model    : spa.model.people
+	    	chat_model      : spa_model.chat,
+	    	people_model    : spa_model.people
 	    });
 
-	    spa.chat.initModule( jqueryMap.$container );
+	    spa_chat.initModule( jqueryMap.$container );
 
 	    $(window)
 	       .bind( 'hashchange', onHashchange )
@@ -251,5 +253,6 @@ spa.shell = (function () {
 	return {
 		initModule : initModule
 	};
-}());
+})(); 
 
+module.exports = spa_shell; 

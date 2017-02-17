@@ -1,5 +1,5 @@
 require("css/spa.chat.css");
-
+let spa_util = require('./spa.util.js');
 
 /**
   # initModule
@@ -17,7 +17,7 @@ require("css/spa.chat.css");
   Throws    : none
   Action    : 
 */
-spa.chat = (function () {
+var spa_chat = (function () {
 	//---------------BEGIN MODULE SCOPE VARIABLES-------------------
 	var 
 		onClickToggle     = function () {},
@@ -220,7 +220,7 @@ spa.chat = (function () {
 	};
 
 	configModule = function ( input_map ) {
-		spa.util.setConfigMap({
+		spa_util.setConfigMap({
 			input_map    : input_map,
 			configMap    : configMap,
 			settable_map : configMap.settable_map			
@@ -251,3 +251,4 @@ spa.chat = (function () {
 
 })();
 
+module.exports = spa_chat;
