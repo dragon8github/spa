@@ -1,7 +1,7 @@
 require("css/spa.shell.css");
-var spa_chat = require('./spa.chat.js'); 
-var spa_model = require('./spa.model.js');
-var spa_shell = (function () {
+const spa_chat = require('./spa.chat.js'); 
+const spa_model = require('./spa.model.js');
+const spa_shell = (function () {
 	//---------------BEGIN MODULE SCOPE VARIABLES-------------------
 	var 	    
 	    onClickChat      = function () {},

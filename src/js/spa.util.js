@@ -1,4 +1,4 @@
-let spa_util = (function(){
+var spa_util = (function(){
 	var makeError,setConfigMap;
 
 	makeError = function ( name_text, msg_text, data ) {

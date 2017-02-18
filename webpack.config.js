@@ -12,14 +12,7 @@ module.exports = {
 			  ],	  
 		app : [
 				   'webpack-dev-server/client?http://127.0.0.1:8894',
-				   __dirname + '/src/js/spa.js',
-				   __dirname + '/src/js/spa.util.js',
-				   __dirname + '/src/js/spa.chat.js',
-				   __dirname + '/src/js/spa.model.js',
-				   __dirname + '/src/js/spa.data.js',
-				   __dirname + '/src/js/spa.fake.js',
-				   __dirname + '/src/js/spa.util_b.js',
-				   __dirname + '/src/js/spa.avtr.js'
+				   __dirname + '/src/js/main.js'
 			  ]		
 	},
 	output:{

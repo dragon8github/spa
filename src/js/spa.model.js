@@ -1,4 +1,4 @@
-let spa_model = (function () {
+const spa_model = (function () {
 	return {};
 })();
 

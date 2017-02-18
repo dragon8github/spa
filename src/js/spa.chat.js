@@ -1,5 +1,5 @@
 require("css/spa.chat.css");
-let spa_util = require('./spa.util.js');
+const spa_util = require('./spa.util.js');
 
 /**
   # initModule
