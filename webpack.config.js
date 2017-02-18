@@ -7,8 +7,7 @@ module.exports = {
 				   __dirname + '/src/js/jq/jquery-1.9.1.js',		
 				   __dirname + '/src/js/jq/jquery.uriAnchor-1.1.3.js',
 				   __dirname + '/src/js/jq/jquery.event.gevent.js',
-				   __dirname + '/src/js/jq/jquery.event.ue.js',			   	
-				   __dirname + '/src/js/jq/taffy.js'			   	
+				   __dirname + '/src/js/jq/jquery.event.ue.js'			   	
 			  ],	  
 		app : [
 				   'webpack-dev-server/client?http://127.0.0.1:8894',

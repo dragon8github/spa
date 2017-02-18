@@ -1,3 +1,0 @@
-spa.fake = (function(){
-	return {};
-})();
