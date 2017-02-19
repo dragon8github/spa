@@ -11,3 +11,7 @@ console.log(peopleList);
 people_db().each( function (person, index) {
 	console.log(person.name, index);
 })
+
+var first_person = people_db({ cid : 'id_03' }).first();
+
+console.log(first_person.name);

@@ -38,9 +38,9 @@ const spa_model = (function () {
 		}
 
 		person = Object.create( personProto );
-		person_map.cid     = cid;
-		person_map.css_map = css_map;
-		person_map.name    = name;
+		person.cid     = cid;
+		person.css_map = css_map;
+		person.name    = name;
 
 		if ( id ) { person.id = id; }
 
